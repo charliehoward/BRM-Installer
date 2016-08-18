@@ -1,7 +1,11 @@
 @ECHO off
-:START
 @ECHO BRM Installer 2.2.2.4
->NUL TIMEOUT /t 4 /NOBREAK
+>NUL TIMEOUT /t 10 /NOBREAK
+cURL -o "C:\Windows\BRM Computers\oem.bmp" "http://files.brmcomputers.co.uk/uploads/oem.bmp"
+cURL -o "C:\Windows\BRM Computers\kisbrm.nupkg" "http://files.brmcomputers.co.uk/uploads/kisbrm.nupkg"
+cURL -o "C:\Windows\BRM Computers\SetTaskbar.vbs" "http://files.brmcomputers.co.uk/uploads/SetTaskbar.vbs"
+cURL -o "C:\Windows\BRM Computers\PinTo10.exe" "http://files.brmcomputers.co.uk/uploads/PinTo10.exe"
+:START
 @ECHO Installing BRM OEM ...
 REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation /v Logo /t REG_SZ /d "C:\Windows\BRM Computers\oem.bmp" /reg:64 /f
 REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation /v Manufacturer /t REG_SZ /d "BRM Computers" /reg:64 /f
@@ -108,4 +112,9 @@ REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Taskband" /v "F
 GOTO CLEANUP
 :CLEANUP
 @ECHO Cleaning up ...
-"C:\Windows\BRM Computers\cleanup.bat"
+DEL "C:\Windows\BRM Computers\kisbrm.nupkg"
+DEL "C:\Windows\BRM Computers\SetTaskbar.vbs"
+DEL "C:\Windows\BRM Computers\PinTo10.exe"
+@ECHO BRM Installer has completed, press any key to exit.
+>NUL PAUSE
+EXIT
