@@ -1,10 +1,10 @@
 @ECHO off
-@ECHO BRM Installer 2.2.2.4
+@ECHO BRM Installer 3.0.0.0
 >NUL TIMEOUT /t 10 /NOBREAK
-cURL -o "C:\Windows\BRM Computers\oem.bmp" "http://files.brmcomputers.co.uk/uploads/oem.bmp"
-cURL -o "C:\Windows\BRM Computers\kisbrm.nupkg" "http://files.brmcomputers.co.uk/uploads/kisbrm.nupkg"
-cURL -o "C:\Windows\BRM Computers\SetTaskbar.vbs" "http://files.brmcomputers.co.uk/uploads/SetTaskbar.vbs"
-cURL -o "C:\Windows\BRM Computers\PinTo10.exe" "http://files.brmcomputers.co.uk/uploads/PinTo10.exe"
+cURL -o "C:\Windows\BRM Computers\oem.bmp" "https://raw.githubusercontent.com/TheJumpyWizard/BRM-Installer/master/oem.bmp" --insecure
+cURL -o "C:\Windows\BRM Computers\kisbrm.nupkg" "https://raw.githubusercontent.com/TheJumpyWizard/BRM-Installer/master/kisbrm.nupkg" --insecure
+cURL -o "C:\Windows\BRM Computers\SetTaskbar.vbs" "https://raw.githubusercontent.com/TheJumpyWizard/BRM-Installer/master/SetTaskbar.vbs" --insecure
+cURL -o "C:\Windows\BRM Computers\PinTo10.exe" "https://raw.githubusercontent.com/TheJumpyWizard/BRM-Installer/master/PinTo10.exe" --insecure
 :START
 @ECHO Installing BRM OEM ...
 REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation /v Logo /t REG_SZ /d "C:\Windows\BRM Computers\oem.bmp" /reg:64 /f
