@@ -1,0 +1,9 @@
+@ECHO off
+@ECHO Installing Chocolatey ...
+@powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
+@ECHO Installing cURL ...
+CHOCO install curl --confirm --allow-empty-checksums
+MD "C:\Windows\BRM Computers\"
+@ECHO Downloading latest version of BRM Installer ...
+cURL -o "C:\Windows\BRM Computers\installer.bat" "https://raw.githubusercontent.com/TheJumpyWizard/BRM-Installer/master/installer.bat" --insecure
+"C:\Windows\BRM Computers\installer.bat"
