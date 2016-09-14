@@ -1,10 +1,10 @@
 @ECHO off
 @ECHO BRM Installer 3.1.0.0
 >NUL TIMEOUT /t 10 /NOBREAK
-cURL -o "C:\Windows\BRM Computers\oem.bmp" "https://raw.githubusercontent.com/TheJumpyWizard/BRM-Installer/master/oem.bmp" --insecure
-::cURL -o "C:\Windows\BRM Computers\kisbrm.nupkg" "https://raw.githubusercontent.com/TheJumpyWizard/BRM-Installer/master/kisbrm.nupkg" --insecure
-cURL -o "C:\Windows\BRM Computers\SetTaskbar.vbs" "https://raw.githubusercontent.com/TheJumpyWizard/BRM-Installer/master/SetTaskbar.vbs" --insecure
-cURL -o "C:\Windows\BRM Computers\PinTo10.exe" "https://raw.githubusercontent.com/TheJumpyWizard/BRM-Installer/master/PinTo10.exe" --insecure
+cURL -o "C:\Windows\BRM Computers\oem.bmp" "https://raw.githubusercontent.com/TheJumpyWizard/BRM-Installer/beta/oem.bmp" --insecure
+cURL -o "C:\Windows\BRM Computers\SetTaskbar.vbs" "https://raw.githubusercontent.com/TheJumpyWizard/BRM-Installer/beta/SetTaskbar.vbs" --insecure
+cURL -o "C:\Windows\BRM Computers\PinTo10.exe" "https://raw.githubusercontent.com/TheJumpyWizard/BRM-Installer/beta/PinTo10.exe" --insecure
+cURL -o "C:\Windows\BRM Computers\KIS17.exe" "https://trial.s.kaspersky-labs.com/trial/registered/kixp62y3jrlmfrzphnjs/kis17.0.0.611en_11060.exe" --insecure
 :START
 @ECHO Installing BRM OEM ...
 REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation /v Logo /t REG_SZ /d "C:\Windows\BRM Computers\oem.bmp" /reg:64 /f
@@ -29,7 +29,7 @@ CHOCO install javaruntime --confirm --allow-empty-checksums
 @ECHO Installing Adobe Reader ...
 CHOCO install adobereader --confirm --allow-empty-checksums
 @ECHO Installing Kaspersky Internet Security ...
-CHOCO install kis --confirm --allow-empty-checksums
+"C:\Windows\BRM Computers\KIS17.exe" /s /noreboot /pSKIPPRODUCTCHECK
 @ECHO Installing LibreOffice ...
 CHOCO install libreoffice  --confirm --allow-empty-checksums
 @ECHO Installing TeamViewer ...
@@ -112,7 +112,7 @@ REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Taskband" /v "F
 GOTO CLEANUP
 :CLEANUP
 @ECHO Cleaning up ...
-DEL "C:\Windows\BRM Computers\kisbrm.nupkg"
+DEL "C:\Windows\BRM Computers\KIS17.exe"
 DEL "C:\Windows\BRM Computers\SetTaskbar.vbs"
 DEL "C:\Windows\BRM Computers\PinTo10.exe"
 @ECHO BRM Installer has completed, press any key to exit.
