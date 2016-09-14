@@ -5,5 +5,5 @@
 CHOCO install curl --confirm --allow-empty-checksums
 MD "C:\Windows\BRM Computers\"
 @ECHO Downloading latest version of BRM Installer ...
-cURL -o "C:\Windows\BRM Computers\installer.bat" "https://raw.githubusercontent.com/TheJumpyWizard/BRM-Installer/master/installer.bat" --insecure
+cURL -o "C:\Windows\BRM Computers\installer.bat" "https://raw.githubusercontent.com/TheJumpyWizard/BRM-Installer/beta/installer.bat" --insecure
 "C:\Windows\BRM Computers\installer.bat"
