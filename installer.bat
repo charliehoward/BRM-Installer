@@ -1,8 +1,8 @@
 @ECHO off
-@ECHO BRM Installer 3.0.0.0
+@ECHO BRM Installer 3.1.0.0
 >NUL TIMEOUT /t 10 /NOBREAK
 cURL -o "C:\Windows\BRM Computers\oem.bmp" "https://raw.githubusercontent.com/TheJumpyWizard/BRM-Installer/master/oem.bmp" --insecure
-cURL -o "C:\Windows\BRM Computers\kisbrm.nupkg" "https://raw.githubusercontent.com/TheJumpyWizard/BRM-Installer/master/kisbrm.nupkg" --insecure
+::cURL -o "C:\Windows\BRM Computers\kisbrm.nupkg" "https://raw.githubusercontent.com/TheJumpyWizard/BRM-Installer/master/kisbrm.nupkg" --insecure
 cURL -o "C:\Windows\BRM Computers\SetTaskbar.vbs" "https://raw.githubusercontent.com/TheJumpyWizard/BRM-Installer/master/SetTaskbar.vbs" --insecure
 cURL -o "C:\Windows\BRM Computers\PinTo10.exe" "https://raw.githubusercontent.com/TheJumpyWizard/BRM-Installer/master/PinTo10.exe" --insecure
 :START
@@ -29,7 +29,7 @@ CHOCO install javaruntime --confirm --allow-empty-checksums
 @ECHO Installing Adobe Reader ...
 CHOCO install adobereader --confirm --allow-empty-checksums
 @ECHO Installing Kaspersky Internet Security ...
-CHOCO install "C:\Windows\BRM Computers\kisbrm.nupkg" --confirm --allow-empty-checksums
+CHOCO install kis --confirm --allow-empty-checksums
 @ECHO Installing LibreOffice ...
 CHOCO install libreoffice  --confirm --allow-empty-checksums
 @ECHO Installing TeamViewer ...
