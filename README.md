@@ -1,4 +1,4 @@
-# BRM Installer version 3.1.0.0
+# BRM Installer version 3.1.2.0
 
 To the run the install run "BRM Installer 3.bat" as an Administrator.
 
@@ -9,6 +9,14 @@ If run on Windows 7 it a multitude of unnecessary services and sets the default 
 If run on Windows 8, 8.1 it changes the default Explorer page to "This PC" and sets the default taskbar.
 
 If run on Windows 10 it disables Windows 10 hibernation mode, changes the default Explorer page to "This PC" and sets the default taskbar.
+
+# Update 3.1.2.0
+
+Seperated the cleanup process into it's own batch file.
+
+# Update 3.1.1.0
+
+Added in choice system that allows to install all programs except for Kaspersky Internet Security and/or LibreOffice.
 
 # Update 3.1.0.0
 
