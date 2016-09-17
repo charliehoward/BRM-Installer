@@ -24,11 +24,6 @@ cURL -o "C:\Windows\BRM Computers\cleanup.bat" "https://raw.githubusercontent.co
 @ECHO.
 @ECHO.
 @ECHO.
-@ECHO.
-@ECHO.
-@ECHO.
-@ECHO.
-@ECHO.
 :QUESTION
 @ECHO 1. Install all programs.
 @ECHO 2. Install all programs except for Kaspersky Internet Security.
