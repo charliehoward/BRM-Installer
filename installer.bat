@@ -3,11 +3,12 @@ cURL -o "C:\Windows\BRM Computers\oem.bmp" "https://raw.githubusercontent.com/Th
 cURL -o "C:\Windows\BRM Computers\kaspersky.nupkg" "https://raw.githubusercontent.com/TheJumpyWizard/BRM-Installer/master/kaspersky.nupkg" --insecure
 cURL -o "C:\Windows\BRM Computers\SetTaskbar.vbs" "https://raw.githubusercontent.com/TheJumpyWizard/BRM-Installer/master/SetTaskbar.vbs" --insecure
 cURL -o "C:\Windows\BRM Computers\PinTo10.exe" "https://raw.githubusercontent.com/TheJumpyWizard/BRM-Installer/master/PinTo10.exe" --insecure
+cURL -o "C:\Windows\BRM Computers\cleanup.bat" "https://raw.githubusercontent.com/TheJumpyWizard/BRM-Installer/master/cleanup.bat" --insecure
 @ECHO off
 @ECHO.
 @ECHO.
 @ECHO 					-------------------------------------------
-@ECHO 					           BRM Installer 3.1.1.0
+@ECHO 					           BRM Installer 3.1.2.0
 @ECHO 					-------------------------------------------
 @ECHO.
 @ECHO.
@@ -230,10 +231,4 @@ REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Taskband" /v "F
 "C:\Windows\BRM Computers\PinTo10.exe" /PTFOL:"C:\Windows" /PTFILE:"Explorer.exe"
 GOTO CLEANUP
 :CLEANUP
-@ECHO Cleaning up ...
-DEL "C:\Windows\BRM Computers\kaspersky.nupkg"
-DEL "C:\Windows\BRM Computers\SetTaskbar.vbs"
-DEL "C:\Windows\BRM Computers\PinTo10.exe"
-@ECHO BRM Installer has completed, press any key to exit.
->NUL PAUSE
-EXIT
+"C:\Windows\BRM Computers\cleanup.bat"
