@@ -1,7 +1,4 @@
 @ECHO off
-SETLOCAL enabledelayedexpansion
-MODE 80,50
-SET "cmdwidth=80"
 cURL -o "C:\Windows\BRM Computers\oem.bmp" "https://raw.githubusercontent.com/TheJumpyWizard/BRM-Installer/master/oem.bmp" --insecure
 cURL -o "C:\Windows\BRM Computers\kaspersky.nupkg" "https://raw.githubusercontent.com/TheJumpyWizard/BRM-Installer/master/kaspersky.nupkg" --insecure
 cURL -o "C:\Windows\BRM Computers\SetTaskbar.vbs" "https://raw.githubusercontent.com/TheJumpyWizard/BRM-Installer/master/SetTaskbar.vbs" --insecure
@@ -21,27 +18,9 @@ cURL -o "C:\Windows\BRM Computers\cleanup.bat" "https://raw.githubusercontent.co
 @ECHO.
 @ECHO.
 @ECHO.
-:Display
-CLS
-SET "Center=-------------------------------------------------------" & call :CenterText Center strLen
-@ECHO.
-set "Center=BRM Installer 3.1.2.1" & call :CenterText Center strLen
-@echo.
-SET "Center=-------------------------------------------------------" & call :CenterText Center strLen
-PAUSE >NUL
-EXIT
-:CenterText
-  IF NOT "!%1:~%len%!"=="" SET /A len+=1 & goto :CenterText
-(ENDLOCAL & SET %2=%len%)
-GOTO CenterTextDisplay
-:AddSpace
-SET "SPACES=%SPACES% "
-:CenterTextDisplay
-SET /a "INDENT=(cmdwidth - strLen)/2" 
-SET "SPACES= "
-FOR /l %%a IN (1,1,%INDENT%) do call :AddSpace
-ECHO %SPACES%%Center%
-SET "len=0"
+@ECHO. 			----------------------------------------
+@ECHO.                                                              BRM Installer 3.1.2.1
+@ECHO.			----------------------------------------
 @ECHO.
 @ECHO.
 @ECHO.
