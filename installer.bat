@@ -4,7 +4,6 @@ cURL -o "C:\Windows\BRM Computers\kaspersky.nupkg" "https://raw.githubuserconten
 cURL -o "C:\Windows\BRM Computers\SetTaskbar.vbs" "https://raw.githubusercontent.com/TheJumpyWizard/BRM-Installer/master/SetTaskbar.vbs" --insecure
 cURL -o "C:\Windows\BRM Computers\PinTo10.exe" "https://raw.githubusercontent.com/TheJumpyWizard/BRM-Installer/master/PinTo10.exe" --insecure
 cURL -o "C:\Windows\BRM Computers\cleanup.bat" "https://raw.githubusercontent.com/TheJumpyWizard/BRM-Installer/master/cleanup.bat" --insecure
-@ECHO off
 @ECHO.
 @ECHO.
 @ECHO.
