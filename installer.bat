@@ -1,4 +1,7 @@
 @ECHO off
+SETLOCAL enabledelayedexpansion
+MODE 120,30
+SET "cmdwidth=120"
 cURL -o "C:\Windows\BRM Computers\oem.bmp" "https://raw.githubusercontent.com/TheJumpyWizard/BRM-Installer/master/oem.bmp" --insecure
 cURL -o "C:\Windows\BRM Computers\kaspersky.nupkg" "https://raw.githubusercontent.com/TheJumpyWizard/BRM-Installer/master/kaspersky.nupkg" --insecure
 cURL -o "C:\Windows\BRM Computers\SetTaskbar.vbs" "https://raw.githubusercontent.com/TheJumpyWizard/BRM-Installer/master/SetTaskbar.vbs" --insecure
@@ -18,9 +21,15 @@ cURL -o "C:\Windows\BRM Computers\cleanup.bat" "https://raw.githubusercontent.co
 @ECHO.
 @ECHO.
 @ECHO.
-@ECHO. 			----------------------------------------
-@ECHO.                                                              BRM Installer 3.1.2.1
-@ECHO.			----------------------------------------
+@ECHO.
+@ECHO.
+@ECHO.
+@ECHO.				------------------------------------------------------
+@ECHO.						BRM Installer 3.1.2.1
+@ECHO. 				------------------------------------------------------
+@ECHO.
+@ECHO.
+@ECHO.
 @ECHO.
 @ECHO.
 @ECHO.
