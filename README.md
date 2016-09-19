@@ -1,4 +1,4 @@
-# BRM Installer version 3.1.3.0
+# BRM Installer version 3.1.4.0
 
 To the run the install download and run the applicable exe for your operating systems architecture.
 
@@ -11,6 +11,10 @@ If run on Windows 7 it disables a number of unnecessary services and sets the de
 If run on Windows 8, 8.1 it changes the default Explorer page to "This PC" and sets the default taskbar.
 
 If run on Windows 10 it disables Windows 10 hibernation mode, changes the default Explorer page to "This PC" and sets the default taskbar.
+
+# Update 3.1.4.0
+
+Fixed issue with .NET4.5 installation and added registry tweak that disables Action Centre in Windows 10.
 
 # Update 3.1.3.0
 
