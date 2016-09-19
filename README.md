@@ -1,8 +1,8 @@
 # BRM Installer version 3.1.3.0
 
-When run you will get a choice that allows you to skip installing Kaspersky Internet Security and/or LibreOffice, if left for 120 seconds it will continue and install all programs.
+To the run the install download and run the applicable exe for your operating systems architecture.
 
-To the run the install run "BRM Installer 3.bat" as an Administrator.
+When run you will get a choice that allows you to skip installing Kaspersky Internet Security and/or LibreOffice, if left for 120 seconds it will continue and install all programs.
 
 Installs the BRM OEM information, 7zip, Adobe Flash Player, Adobe Reader, Google Chrome, Java, Kaspersky Internet Security 2017, LibreOffice, Microsoft .NET 4.5, Mozilla Firefox, TeamViewer, VLC Media Player.
 
