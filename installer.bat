@@ -23,10 +23,10 @@ cURL -o "C:\Windows\BRM Computers\cleanup.bat" "https://raw.githubusercontent.co
 @ECHO.
 @ECHO.
 @ECHO.
-@ECHO. BRM Installer   v3.1.2.1   2016-09-17
+@ECHO. BRM Installer   v3.1.3.0   2016-09-19
 @ECHO.
 @ECHO.				------------------------------------------------------
-@ECHO.						BRM Installer 3.1.2.1
+@ECHO.						BRM Installer 3.1.3.0
 @ECHO. 				------------------------------------------------------
 @ECHO.
 @ECHO.
@@ -46,18 +46,17 @@ cURL -o "C:\Windows\BRM Computers\cleanup.bat" "https://raw.githubusercontent.co
 @ECHO.
 @ECHO.
 @ECHO.
-:QUESTION
 @ECHO 1. Install all programs.
 @ECHO 2. Install all programs except for Kaspersky Internet Security.
 @ECHO 3. Install all programs except for LibreOffice.
 @ECHO 4. Install all programs except for Kaspersky Internet Security and LibreOffice.
 @ECHO.
 @ECHO.
-SET /P MODE=What version would you like to install: 
-IF "%MODE%" == "1" GOTO 1
-IF "%MODE%" == "2" GOTO 2
-IF "%MODE%" == "3" GOTO 3
-IF "%MODE%" == "3" GOTO 4
+CHOICE /C 1234 /N /T 120 /D 1 /M "What version would you like to install: "
+IF %ERRORLEVEL% == 1 GOTO 1
+IF %ERRORLEVEL% == 2 GOTO 2
+IF %ERRORLEVEL% == 3 GOTO 3
+IF %ERRORLEVEL% == 4 GOTO 4
 :1
 @ECHO Installing BRM OEM ...
 REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation /v Logo /t REG_SZ /d "C:\Windows\BRM Computers\oem.bmp" /reg:64 /f
