@@ -1,4 +1,6 @@
-# BRM Installer version 3.1.2.1
+# BRM Installer version 3.1.3.0
+
+When run you will get a choice that allows you to skip installing Kaspersky Internet Security and/or LibreOffice, if left for 120 seconds it will continue and install all programs.
 
 To the run the install run "BRM Installer 3.bat" as an Administrator.
 
@@ -10,6 +12,10 @@ If run on Windows 8, 8.1 it changes the default Explorer page to "This PC" and s
 
 If run on Windows 10 it disables Windows 10 hibernation mode, changes the default Explorer page to "This PC" and sets the default taskbar.
 
+# Update 3.1.3.0
+
+Added 120 second timer to the question that selects mode 1 if left.
+
 # Update 3.1.2.1
 
 Fixed formatting issues.
@@ -20,8 +26,8 @@ Seperated the cleanup process into it's own batch file.
 
 # Update 3.1.1.0
 
-Added in choice system that allows to install all programs except for Kaspersky Internet Security and/or LibreOffice.
+Replaced Kaspersky Internet Security 2016 with Kaspersky Internet Security 2017.
 
 # Update 3.1.0.0
 
-Replaced Kaspersky Internet Security 2016 with Kaspersky Internet Security 2017.
+Added in choice system that allows to install all programs except for Kaspersky Internet Security and/or LibreOffice.
