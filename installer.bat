@@ -23,10 +23,10 @@ cURL -o "C:\Windows\BRM Computers\cleanup.bat" "https://raw.githubusercontent.co
 @ECHO.
 @ECHO.
 @ECHO.
-@ECHO. BRM Installer   v3.1.4.0   2016-09-19
+@ECHO. BRM Installer   v3.1.4.1   2016-09-24
 @ECHO.
 @ECHO.				------------------------------------------------------
-@ECHO.						BRM Installer 3.1.4.0
+@ECHO.						BRM Installer 3.1.4.1
 @ECHO. 				------------------------------------------------------
 @ECHO.
 @ECHO.
@@ -85,7 +85,7 @@ CHOCO install adobereader --confirm --allow-empty-checksums
 @ECHO Installing LibreOffice ...
 CHOCO install libreoffice  --confirm --allow-empty-checksums
 @ECHO Installing TeamViewer ...
-CHOCO install teamviewer --confirm --allow-empty-checksums
+CHOCO install teamviewer --confirm --allow-empty-checksums --ignore-checksums
 GOTO END
 :2
 @ECHO Installing BRM OEM ...
@@ -113,7 +113,7 @@ CHOCO install adobereader --confirm --allow-empty-checksums
 @ECHO Installing LibreOffice ...
 CHOCO install libreoffice  --confirm --allow-empty-checksums
 @ECHO Installing TeamViewer ...
-CHOCO install teamviewer --confirm --allow-empty-checksums
+CHOCO install teamviewer --confirm --allow-empty-checksums --ignore-checksums
 GOTO END
 :3
 @ECHO Installing BRM OEM ...
@@ -141,7 +141,7 @@ CHOCO install javaruntime --confirm --allow-empty-checksums
 @ECHO Installing Adobe Reader ...
 CHOCO install adobereader --confirm --allow-empty-checksums
 @ECHO Installing TeamViewer ...
-CHOCO install teamviewer --confirm --allow-empty-checksums
+CHOCO install teamviewer --confirm --allow-empty-checksums--ignore-checksums
 GOTO END
 :4
 @ECHO Installing BRM OEM ...
@@ -167,7 +167,7 @@ CHOCO install javaruntime --confirm --allow-empty-checksums
 @ECHO Installing Adobe Reader ...
 CHOCO install adobereader --confirm --allow-empty-checksums
 @ECHO Installing TeamViewer ...
-CHOCO install teamviewer --confirm --allow-empty-checksums
+CHOCO install teamviewer --confirm --allow-empty-checksums --ignore-checksums
 GOTO END
 :END
 VER | FINDSTR /I "6\.1\." > NUL
