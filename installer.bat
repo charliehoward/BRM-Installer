@@ -23,11 +23,11 @@ cURL -o "C:\Windows\BRM Computers\cleanup.bat" "https://raw.githubusercontent.co
 @ECHO.
 @ECHO.
 @ECHO.
-@ECHO. BRM Installer   v3.1.4.2   2016-10-03
+@ECHO. BRM Installer   v3.1.4.3   2016-10-03
 @ECHO. Powered by Chocolatey
 @ECHO.
 @ECHO.				------------------------------------------------------
-@ECHO.						BRM Installer 3.1.4.2
+@ECHO.						BRM Installer 3.1.4.3
 @ECHO. 				------------------------------------------------------
 @ECHO.
 @ECHO.
@@ -75,11 +75,11 @@ CHOCO install "C:\Windows\BRM Computers\kaspersky.nupkg" --confirm --allow-empty
 @ECHO Installing VLC Media Player ...
 CHOCO install vlc --confirm --allow-empty-checksums
 @ECHO Installing 7zip ...
-CHOCO install 7zip --confirm --allow-empty-checksums
+CHOCO install 7zip.install --confirm --allow-empty-checksums
 @ECHO Installing Adobe Flash Player ...
 CHOCO install flashplayerplugin --confirm --allow-empty-checksums
 @ECHO Installing Java ...
-CHOCO install javaruntime --confirm --allow-empty-checksums
+CHOCO install jre8 --confirm --allow-empty-checksums
 @ECHO Installing Adobe Reader ...
 CHOCO install adobereader --confirm --allow-empty-checksums
 @ECHO Installing LibreOffice ...
