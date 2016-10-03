@@ -23,12 +23,12 @@ cURL -o "C:\Windows\BRM Computers\cleanup.bat" "https://raw.githubusercontent.co
 @ECHO.
 @ECHO.
 @ECHO.
-@ECHO. BRM Installer   v3.1.4.1   2016-09-24
+@ECHO. BRM Installer   v3.1.4.2   2016-10-03
+@ECHO. Powered by Chocolatey
 @ECHO.
 @ECHO.				------------------------------------------------------
-@ECHO.						BRM Installer 3.1.4.1
+@ECHO.						BRM Installer 3.1.4.2
 @ECHO. 				------------------------------------------------------
-@ECHO.
 @ECHO.
 @ECHO.
 @ECHO.
