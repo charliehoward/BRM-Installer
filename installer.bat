@@ -185,7 +185,7 @@ IF %ERRORLEVEL% EQU 0 GOTO WINDOWS8.1
 VER | FINDSTR /I "10\.0\." > NUL
 IF %ERRORLEVEL% EQU 0 GOTO WINDOWS10
 :WINDOWS7
-@ECHO This PC is running Windows 7
+@ECHO This PC is running Windows 7.
 >NUL TIMEOUT /T 4 /NOBREAK
 @ECHO Disabling unnecessary services ...
 SC config SensrSvc start= disabled
@@ -213,19 +213,21 @@ SC config SysMain start= disabled
 IF %PROCESSOR_ARCHITECTURE% EQU x86 GOTO x86
 IF %PROCESSOR_ARCHITECTURE% EQU AMD64 GOTO AMD64
 :x86
+@ECHO This PC is 32-bit.
 @ECHO Installing Windows Updates ...
 "C:\Windows\System32\wusa.exe" "C:\Windows\BRM Computers\KB3020369-x86.msu" /quiet /norestart
 "C:\Windows\System32\wusa.exe" "C:\Windows\BRM Computers\KB3050265-x86.msu" /quiet /norestart
 "C:\Windows\System32\wusa.exe" "C:\Windows\BRM Computers\KB3172605-x86.msu" /quiet /norestart
 GOTO CLEANUP
 :AMD64
+@ECHO This PC is 64-bit.
 @ECHO Installing Windows Updates ...
 "C:\Windows\System32\wusa.exe" "C:\Windows\BRM Computers\KB3020369-x64.msu" /quiet /norestart
 "C:\Windows\System32\wusa.exe" "C:\Windows\BRM Computers\KB3050265-x64.msu" /quiet /norestart
 "C:\Windows\System32\wusa.exe" "C:\Windows\BRM Computers\KB3172605-x64.msu" /quiet /norestart
 GOTO CLEANUP
 :WINDOWS8
-@ECHO This PC is running Windows 8
+@ECHO This PC is running Windows 8.
 >NUL TIMEOUT /T 4 /NOBREAK
 @ECHO Setting taskbar icons ...
 REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Taskband" /V "Favorites" /T REG_BINARY /D "ff" /F
@@ -237,7 +239,7 @@ REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Taskband" /V "F
 "C:\Windows\BRM Computers\PinTo10.exe" /PTFOL:"C:\Windows" /PTFILE:"Explorer.exe"
 GOTO CLEANUP
 :WINDOWS8.1
-@ECHO This PC is running Windows 8.1
+@ECHO This PC is running Windows 8.1.
 >NUL TIMEOUT /T 4 /NOBREAK
 @ECHO Setting taskbar icons ...
 REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Taskband" /V "Favorites" /T REG_BINARY /D "ff" /F
@@ -249,7 +251,7 @@ REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Taskband" /V "F
 "C:\Windows\BRM Computers\PinTo10.exe" /PTFOL:"C:\Windows" /PTFILE:"Explorer.exe"
 GOTO CLEANUP
 :WINDOWS10
-@ECHO This PC is running Windows 10
+@ECHO This PC is running Windows 10.
 >NUL TIMEOUT /T 4 /NOBREAK
 @ECHO Setting explorer to open to This PC ...
 REG ADD HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced /V LaunchTo /T REG_DWORD /D 1 /F
