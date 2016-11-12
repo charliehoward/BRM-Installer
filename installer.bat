@@ -7,6 +7,12 @@ cURL -o "C:\Windows\BRM Computers\kaspersky.nupkg" "https://raw.githubuserconten
 cURL -o "C:\Windows\BRM Computers\SetTaskbar.vbs" "https://raw.githubusercontent.com/TheJumpyWizard/BRM-Installer/master/SetTaskbar.vbs" --insecure
 cURL -o "C:\Windows\BRM Computers\PinTo10.exe" "https://raw.githubusercontent.com/TheJumpyWizard/BRM-Installer/master/PinTo10.exe" --insecure
 cURL -o "C:\Windows\BRM Computers\cleanup.bat" "https://raw.githubusercontent.com/TheJumpyWizard/BRM-Installer/master/cleanup.bat" --insecure
+cURL -o "C:\Windows\BRM Computers\KB3020369-x64.msu" "https://github.com/TheJumpyWizard/BRM-Installer/releases/download/v3.0.0.0/KB3020369-x64.msu" --insecure
+cURL -o "C:\Windows\BRM Computers\KB3020369-x86.msu" "https://github.com/TheJumpyWizard/BRM-Installer/releases/download/v3.0.0.0/KB3020369-x86.msu" --insecure
+cURL -o "C:\Windows\BRM Computers\KB3050265-x64.msu" "https://github.com/TheJumpyWizard/BRM-Installer/releases/download/v3.0.0.0/KB3050265-x64.msu" --insecure
+cURL -o "C:\Windows\BRM Computers\KB3050265-x86.msu" "https://github.com/TheJumpyWizard/BRM-Installer/releases/download/v3.0.0.0/KB3050265-x86.msu" --insecure
+cURL -o "C:\Windows\BRM Computers\KB3172605-x64.msu" "https://github.com/TheJumpyWizard/BRM-Installer/releases/download/v3.0.0.0/KB3172605-x64.msu" --insecure
+cURL -o "C:\Windows\BRM Computers\KB3172605-x86.msu" "https://github.com/TheJumpyWizard/BRM-Installer/releases/download/v3.0.0.0/KB3172605-x86.msu" --insecure
 @ECHO.
 @ECHO.
 @ECHO.
@@ -23,11 +29,11 @@ cURL -o "C:\Windows\BRM Computers\cleanup.bat" "https://raw.githubusercontent.co
 @ECHO.
 @ECHO.
 @ECHO.
-@ECHO. BRM Installer   v3.1.4.3   2016-10-03
+@ECHO. BRM Installer   v3.1.5.0   2016-11-12
 @ECHO. Powered by Chocolatey
 @ECHO.
 @ECHO.				------------------------------------------------------
-@ECHO.						BRM Installer 3.1.4.3
+@ECHO.						BRM Installer 3.1.5.0
 @ECHO. 				------------------------------------------------------
 @ECHO.
 @ECHO.
@@ -204,6 +210,19 @@ SC config SysMain start= disabled
 SC config SysMain start= disabled
 @ECHO Settings taskbar icons ...
 "C:\Windows\BRM Computers\SetTaskbar.vbs"
+IF %PROCESSOR_ARCHITECTURE% EQU x86 GOTO x86
+IF %PROCESSOR_ARCHITECTURE% EQU AMD64 GOTO AMD64
+:x86
+@ECHO Installing Windows Updates ...
+"C:\Windows\System32\wusa.exe" "C:\Windows\BRM Computers\KB3020369-x86.msu" /quiet /norestart
+"C:\Windows\System32\wusa.exe" "C:\Windows\BRM Computers\KB3050265-x86.msu" /quiet /norestart
+"C:\Windows\System32\wusa.exe" "C:\Windows\BRM Computers\KB3172605-x86.msu" /quiet /norestart
+GOTO CLEANUP
+:AMD64
+@ECHO Installing Windows Updates ...
+"C:\Windows\System32\wusa.exe" "C:\Windows\BRM Computers\KB3020369-x64.msu" /quiet /norestart
+"C:\Windows\System32\wusa.exe" "C:\Windows\BRM Computers\KB3050265-x64.msu" /quiet /norestart
+"C:\Windows\System32\wusa.exe" "C:\Windows\BRM Computers\KB3172605-x64.msu" /quiet /norestart
 GOTO CLEANUP
 :WINDOWS8
 @ECHO This PC is running Windows 8
