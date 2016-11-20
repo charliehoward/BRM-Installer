@@ -29,11 +29,11 @@ cURL -o "C:\Windows\BRM Computers\KB3172605-x86.msu" "https://github.com/TheJump
 @ECHO.
 @ECHO.
 @ECHO.
-@ECHO. BRM Installer   v3.1.5.0   2016-11-12
+@ECHO. BRM Installer   v3.1.5.1   2016-11-20
 @ECHO. Powered by Chocolatey
 @ECHO.
 @ECHO.				------------------------------------------------------
-@ECHO.						BRM Installer 3.1.5.0
+@ECHO.						BRM Installer 3.1.5.1
 @ECHO. 				------------------------------------------------------
 @ECHO.
 @ECHO.
@@ -64,6 +64,9 @@ IF %ERRORLEVEL% == 2 GOTO 2
 IF %ERRORLEVEL% == 3 GOTO 3
 IF %ERRORLEVEL% == 4 GOTO 4
 :1
+@ECHO Disabling Windows Updates ...
+SC config wuauserv start= disabled
+NET stop wuauserv
 @ECHO Installing BRM OEM ...
 REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation /V Logo /T REG_SZ /D "C:\Windows\BRM Computers\oem.bmp" /reg:64 /F
 REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation /V Manufacturer /T REG_SZ /D "BRM Computers" /REG:64 /F
@@ -94,6 +97,9 @@ CHOCO install libreoffice  --confirm --allow-empty-checksums
 CHOCO install teamviewer --confirm --allow-empty-checksums --ignore-checksums
 GOTO END
 :2
+@ECHO Disabling Windows Updates ...
+SC config wuauserv start= disabled
+NET stop wuauserv
 @ECHO Installing BRM OEM ...
 REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation /V Logo /T REG_SZ /D "C:\Windows\BRM Computers\oem.bmp" /reg:64 /F
 REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation /V Manufacturer /T REG_SZ /D "BRM Computers" /REG:64 /F
@@ -122,6 +128,9 @@ CHOCO install libreoffice  --confirm --allow-empty-checksums
 CHOCO install teamviewer --confirm --allow-empty-checksums --ignore-checksums
 GOTO END
 :3
+@ECHO Disabling Windows Updates ...
+SC config wuauserv start= disabled
+NET stop wuauserv
 @ECHO Installing BRM OEM ...
 REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation /V Logo /T REG_SZ /D "C:\Windows\BRM Computers\oem.bmp" /reg:64 /F
 REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation /V Manufacturer /T REG_SZ /D "BRM Computers" /REG:64 /F
@@ -150,6 +159,9 @@ CHOCO install adobereader --confirm --allow-empty-checksums
 CHOCO install teamviewer --confirm --allow-empty-checksums--ignore-checksums
 GOTO END
 :4
+@ECHO Disabling Windows Updates ...
+SC config wuauserv start= disabled
+NET stop wuauserv
 @ECHO Installing BRM OEM ...
 REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation /V Logo /T REG_SZ /D "C:\Windows\BRM Computers\oem.bmp" /reg:64 /F
 REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation /V Manufacturer /T REG_SZ /D "BRM Computers" /REG:64 /F
@@ -269,4 +281,7 @@ REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Taskband" /V "F
 "C:\Windows\BRM Computers\PinTo10.exe" /PTFOL:"C:\Windows" /PTFILE:"Explorer.exe"
 GOTO CLEANUP
 :CLEANUP
+@ECHO Enabling Windows Updates ...
+SC config wuauserv start= auto
+NET start wuauserv
 "C:\Windows\BRM Computers\cleanup.bat"
