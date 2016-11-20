@@ -1,4 +1,4 @@
-# BRM Installer version 3.1.5.0
+# BRM Installer version 3.1.5.1
 
 To the run the install download and run the applicable exe for your operating systems architecture.
 
@@ -11,6 +11,10 @@ If run on Windows 7 it disables a number of unnecessary services, sets the defau
 If run on Windows 8, 8.1 it changes the default Explorer page to "This PC" and sets the default taskbar.
 
 If run on Windows 10 it disables Windows 10 hibernation mode, changes the default Explorer page to "This PC" and sets the default taskbar.
+
+# Update 3.1.5.1
+
+Installer now disables Windows Updates during installation and then re-enables them when complete.
 
 # Update 3.1.5.0
 
