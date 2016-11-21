@@ -7,12 +7,12 @@ cURL -o "C:\Windows\BRM Computers\kaspersky.nupkg" "https://raw.githubuserconten
 cURL -o "C:\Windows\BRM Computers\SetTaskbar.vbs" "https://raw.githubusercontent.com/TheJumpyWizard/BRM-Installer/master/SetTaskbar.vbs" --insecure
 cURL -o "C:\Windows\BRM Computers\PinTo10.exe" "https://raw.githubusercontent.com/TheJumpyWizard/BRM-Installer/master/PinTo10.exe" --insecure
 cURL -o "C:\Windows\BRM Computers\cleanup.bat" "https://raw.githubusercontent.com/TheJumpyWizard/BRM-Installer/master/cleanup.bat" --insecure
-cURL -o "C:\Windows\BRM Computers\KB3020369-x64.msu" "https://github.com/TheJumpyWizard/BRM-Installer/releases/download/v3.0.0.0/KB3020369-x64.msu" --insecure
-cURL -o "C:\Windows\BRM Computers\KB3020369-x86.msu" "https://github.com/TheJumpyWizard/BRM-Installer/releases/download/v3.0.0.0/KB3020369-x86.msu" --insecure
-cURL -o "C:\Windows\BRM Computers\KB3050265-x64.msu" "https://github.com/TheJumpyWizard/BRM-Installer/releases/download/v3.0.0.0/KB3050265-x64.msu" --insecure
-cURL -o "C:\Windows\BRM Computers\KB3050265-x86.msu" "https://github.com/TheJumpyWizard/BRM-Installer/releases/download/v3.0.0.0/KB3050265-x86.msu" --insecure
-cURL -o "C:\Windows\BRM Computers\KB3172605-x64.msu" "https://github.com/TheJumpyWizard/BRM-Installer/releases/download/v3.0.0.0/KB3172605-x64.msu" --insecure
-cURL -o "C:\Windows\BRM Computers\KB3172605-x86.msu" "https://github.com/TheJumpyWizard/BRM-Installer/releases/download/v3.0.0.0/KB3172605-x86.msu" --insecure
+cURL -o "C:\Windows\BRM Computers\KB3020369-x64.msu" -L "https://github.com/TheJumpyWizard/BRM-Installer/releases/download/v3.0.0.0/KB3020369-x64.msu" --insecure
+cURL -o "C:\Windows\BRM Computers\KB3020369-x86.msu" -L "https://github.com/TheJumpyWizard/BRM-Installer/releases/download/v3.0.0.0/KB3020369-x86.msu" --insecure
+cURL -o "C:\Windows\BRM Computers\KB3050265-x64.msu" -L "https://github.com/TheJumpyWizard/BRM-Installer/releases/download/v3.0.0.0/KB3050265-x64.msu" --insecure
+cURL -o "C:\Windows\BRM Computers\KB3050265-x86.msu" -L "https://github.com/TheJumpyWizard/BRM-Installer/releases/download/v3.0.0.0/KB3050265-x86.msu" --insecure
+cURL -o "C:\Windows\BRM Computers\KB3172605-x64.msu" -L "https://github.com/TheJumpyWizard/BRM-Installer/releases/download/v3.0.0.0/KB3172605-x64.msu" --insecure
+cURL -o "C:\Windows\BRM Computers\KB3172605-x86.msu" -L "https://github.com/TheJumpyWizard/BRM-Installer/releases/download/v3.0.0.0/KB3172605-x86.msu" --insecure
 @ECHO.
 @ECHO.
 @ECHO.
