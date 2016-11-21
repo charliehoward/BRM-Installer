@@ -1,4 +1,4 @@
-# BRM Installer version 3.1.5.1
+# BRM Installer version 3.1.5.2
 
 To the run the install download and run the applicable exe for your operating systems architecture.
 
@@ -14,8 +14,8 @@ If run on Windows 10 it disables Windows 10 hibernation mode, changes the defaul
 
 # Update 3.1.5.2
 
-- Don't disable the Windows Update service
-- Fixed issue with CURL redirects
+Doesn't disable the Windows Update service, only stops it during installation.
+Fixed issue with CURL redirects.
 
 # Update 3.1.5.1
 
