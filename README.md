@@ -12,6 +12,11 @@ If run on Windows 8, 8.1 it changes the default Explorer page to "This PC" and s
 
 If run on Windows 10 it disables Windows 10 hibernation mode, changes the default Explorer page to "This PC" and sets the default taskbar.
 
+# Update 3.1.5.2
+
+- Don't disable the Windows Update service
+- Fixed issue with CURL redirects
+
 # Update 3.1.5.1
 
 Installer now disables Windows Updates during installation and then re-enables them when complete.
