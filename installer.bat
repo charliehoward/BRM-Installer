@@ -223,16 +223,16 @@ IF %PROCESSOR_ARCHITECTURE% EQU AMD64 GOTO AMD64
 :x86
 @ECHO This PC is 32-bit.
 @ECHO Installing Windows Updates ...
-"C:\Windows\System32\wusa.exe" "C:\Windows\BRM Computers\KB3020369-x86.msu" /quiet
-"C:\Windows\System32\wusa.exe" "C:\Windows\BRM Computers\KB3050265-x86.msu" /quiet
-"C:\Windows\System32\wusa.exe" "C:\Windows\BRM Computers\KB3172605-x86.msu" /quiet
+"C:\Windows\System32\wusa.exe" "C:\Windows\BRM Computers\KB3020369-x86.msu" /quiet /norestart
+"C:\Windows\System32\wusa.exe" "C:\Windows\BRM Computers\KB3050265-x86.msu" /quiet /norestart
+"C:\Windows\System32\wusa.exe" "C:\Windows\BRM Computers\KB3172605-x86.msu" /quiet /norestart
 GOTO CLEANUP
 :AMD64
 @ECHO This PC is 64-bit.
 @ECHO Installing Windows Updates ...
-"C:\Windows\System32\wusa.exe" "C:\Windows\BRM Computers\KB3020369-x64.msu" /quiet
-"C:\Windows\System32\wusa.exe" "C:\Windows\BRM Computers\KB3050265-x64.msu" /quiet
-"C:\Windows\System32\wusa.exe" "C:\Windows\BRM Computers\KB3172605-x64.msu" /quiet
+"C:\Windows\System32\wusa.exe" "C:\Windows\BRM Computers\KB3020369-x64.msu" /quiet /norestart
+"C:\Windows\System32\wusa.exe" "C:\Windows\BRM Computers\KB3050265-x64.msu" /quiet /norestart
+"C:\Windows\System32\wusa.exe" "C:\Windows\BRM Computers\KB3172605-x64.msu" /quiet /norestart
 GOTO CLEANUP
 :WINDOWS8
 @ECHO This PC is running Windows 8.
