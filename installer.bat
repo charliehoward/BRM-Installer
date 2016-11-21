@@ -29,11 +29,11 @@ cURL -o "C:\Windows\BRM Computers\KB3172605-x86.msu" -L "https://github.com/TheJ
 @ECHO.
 @ECHO.
 @ECHO.
-@ECHO. BRM Installer   v3.1.5.1   2016-11-20
+@ECHO. BRM Installer   v3.1.5.2   2016-11-21
 @ECHO. Powered by Chocolatey
 @ECHO.
 @ECHO.				------------------------------------------------------
-@ECHO.						BRM Installer 3.1.5.1
+@ECHO.						BRM Installer 3.1.5.2
 @ECHO. 				------------------------------------------------------
 @ECHO.
 @ECHO.
@@ -64,8 +64,7 @@ IF %ERRORLEVEL% == 2 GOTO 2
 IF %ERRORLEVEL% == 3 GOTO 3
 IF %ERRORLEVEL% == 4 GOTO 4
 :1
-@ECHO Disabling Windows Updates ...
-SC config wuauserv start= disabled
+@ECHO Stopping Windows Updates Service ...
 NET stop wuauserv
 @ECHO Installing BRM OEM ...
 REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation /V Logo /T REG_SZ /D "C:\Windows\BRM Computers\oem.bmp" /reg:64 /F
@@ -97,8 +96,7 @@ CHOCO install libreoffice  --confirm --allow-empty-checksums
 CHOCO install teamviewer --confirm --allow-empty-checksums --ignore-checksums
 GOTO END
 :2
-@ECHO Disabling Windows Updates ...
-SC config wuauserv start= disabled
+@ECHO Stopping Windows Updates Service ...
 NET stop wuauserv
 @ECHO Installing BRM OEM ...
 REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation /V Logo /T REG_SZ /D "C:\Windows\BRM Computers\oem.bmp" /reg:64 /F
@@ -128,8 +126,7 @@ CHOCO install libreoffice  --confirm --allow-empty-checksums
 CHOCO install teamviewer --confirm --allow-empty-checksums --ignore-checksums
 GOTO END
 :3
-@ECHO Disabling Windows Updates ...
-SC config wuauserv start= disabled
+@ECHO Stopping Windows Updates Service ...
 NET stop wuauserv
 @ECHO Installing BRM OEM ...
 REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation /V Logo /T REG_SZ /D "C:\Windows\BRM Computers\oem.bmp" /reg:64 /F
@@ -159,8 +156,7 @@ CHOCO install adobereader --confirm --allow-empty-checksums
 CHOCO install teamviewer --confirm --allow-empty-checksums--ignore-checksums
 GOTO END
 :4
-@ECHO Disabling Windows Updates ...
-SC config wuauserv start= disabled
+@ECHO Stopping Windows Updates Service ...
 NET stop wuauserv
 @ECHO Installing BRM OEM ...
 REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation /V Logo /T REG_SZ /D "C:\Windows\BRM Computers\oem.bmp" /reg:64 /F
@@ -227,16 +223,16 @@ IF %PROCESSOR_ARCHITECTURE% EQU AMD64 GOTO AMD64
 :x86
 @ECHO This PC is 32-bit.
 @ECHO Installing Windows Updates ...
-"C:\Windows\System32\wusa.exe" "C:\Windows\BRM Computers\KB3020369-x86.msu" /quiet /norestart
-"C:\Windows\System32\wusa.exe" "C:\Windows\BRM Computers\KB3050265-x86.msu" /quiet /norestart
-"C:\Windows\System32\wusa.exe" "C:\Windows\BRM Computers\KB3172605-x86.msu" /quiet /norestart
+"C:\Windows\System32\wusa.exe" "C:\Windows\BRM Computers\KB3020369-x86.msu" /quiet
+"C:\Windows\System32\wusa.exe" "C:\Windows\BRM Computers\KB3050265-x86.msu" /quiet
+"C:\Windows\System32\wusa.exe" "C:\Windows\BRM Computers\KB3172605-x86.msu" /quiet
 GOTO CLEANUP
 :AMD64
 @ECHO This PC is 64-bit.
 @ECHO Installing Windows Updates ...
-"C:\Windows\System32\wusa.exe" "C:\Windows\BRM Computers\KB3020369-x64.msu" /quiet /norestart
-"C:\Windows\System32\wusa.exe" "C:\Windows\BRM Computers\KB3050265-x64.msu" /quiet /norestart
-"C:\Windows\System32\wusa.exe" "C:\Windows\BRM Computers\KB3172605-x64.msu" /quiet /norestart
+"C:\Windows\System32\wusa.exe" "C:\Windows\BRM Computers\KB3020369-x64.msu" /quiet
+"C:\Windows\System32\wusa.exe" "C:\Windows\BRM Computers\KB3050265-x64.msu" /quiet
+"C:\Windows\System32\wusa.exe" "C:\Windows\BRM Computers\KB3172605-x64.msu" /quiet
 GOTO CLEANUP
 :WINDOWS8
 @ECHO This PC is running Windows 8.
@@ -281,7 +277,6 @@ REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Taskband" /V "F
 "C:\Windows\BRM Computers\PinTo10.exe" /PTFOL:"C:\Windows" /PTFILE:"Explorer.exe"
 GOTO CLEANUP
 :CLEANUP
-@ECHO Enabling Windows Updates ...
-SC config wuauserv start= auto
+@ECHO Starting Windows Updates Service ...
 NET start wuauserv
 "C:\Windows\BRM Computers\cleanup.bat"
