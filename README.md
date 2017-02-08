@@ -1,4 +1,4 @@
-# BRM Installer version 3.1.5.2
+# BRM Installer version 3.2.0.0 (FINAL)
 
 To the run the install download and run the applicable exe for your operating systems architecture.
 
@@ -12,14 +12,9 @@ If run on Windows 8, 8.1 it changes the default Explorer page to "This PC" and s
 
 If run on Windows 10 it disables Windows 10 hibernation mode, changes the default Explorer page to "This PC" and sets the default taskbar.
 
-# Update 3.1.5.2
+# Update 3.2.0.0
 
-Doesn't disable the Windows Update service, only stops it during installation.
-Fixed issue with CURL redirects.
-
-# Update 3.1.5.1
-
-Installer now disables Windows Updates during installation and then re-enables them when complete.
+Final update as moving to new PowerShell version and to accomadate for username change.
 
 # Update 3.1.5.0
 
